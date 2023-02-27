@@ -19,13 +19,25 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Home Screen'),
         centerTitle: true,
       ),
-      body: Container(
-        height: Get.height * .3,
-        //height: MediaQuery.of(context).size.height * .3,
-        color: Colors.teal,
-        child: Center(
-          child: Text('Center'),
-        ),
+      body: Column(
+        children: [
+          Container(
+            height: Get.height * .2,
+            width: Get.width * .8,
+            color: Colors.teal,
+            child: Center(
+              child: Text('Center'),
+            ),
+          ),
+          Container(
+            height: Get.height * .4,
+            width: Get.width * .5,
+            color: Colors.grey,
+            child: Center(
+              child: Text('Center'),
+            ),
+          ),
+        ],
       ),
     );
   }
