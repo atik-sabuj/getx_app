@@ -43,6 +43,12 @@ class _HomeScreenState extends State<HomeScreen> {
               OutlinedButton(onPressed: (){
                 Get.updateLocale(Locale('ban', 'BD'));
               }, child: Text('Bangla')),
+
+              SizedBox(width: 20,),
+
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(Locale('hin', 'IND'));
+              }, child: Text('Hindi')),
             ],
           ),
         ],

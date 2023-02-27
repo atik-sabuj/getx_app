@@ -17,6 +17,10 @@ class Languages extends Translations {
       'message' : 'আপনার নাম কি',
       'name' : 'আতিকুজ্জামান সবুজ'
     },
+    'hin_IND' : {
+      'message' : 'आपका क्या नाम है',
+      'name' : 'अतिकुज्जमां सबुज'
+    },
   };
 
 }
