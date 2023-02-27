@@ -13,25 +13,46 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: Text('Basic GetX'),
       ),
-      body: Column(
-        children: [
-
-        ],
+      body: Card(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text('GetX Dialog Alert'),
+              subtitle: Text('GetX dialog alert with GetX'),
+              onTap: (){
+                Get.defaultDialog(
+                  title: 'Delete Chat',
+                  titlePadding: EdgeInsets.only(top: 20),
+                  contentPadding: EdgeInsets.all(20),
+                  middleText: 'Are you sure, you want to delete this chat?',
+                  /*textConfirm: 'Yes',
+                  textCancel: 'No',*/
+                  confirm: TextButton(onPressed: (){
+                    //Navigator.pop(context);
+                    Get.back();
+                  }, child: Text('Ok')),
+                  cancel: TextButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, child: Text('Cancel')),
+/*                  content: Column(
+                    children: [
+                      Text('Ok'),
+                      Text('Cancel'),
+                      Text('Restart'),
+                      Text('Check'),
+                      Text('Confirm'),
+                    ],
+                  ),*/
+                );
+              },
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
-          Get.snackbar('Sabuj Atik',
-              'Subscribe My Channel',
-              icon: Icon(Icons.add),
-              onTap: (snap){
-            
-              },
-            mainButton: TextButton(onPressed: (){},
-                child: Text('Click')),
-              backgroundColor: Colors.teal,
-            snackPosition: SnackPosition.BOTTOM,
-          );
+
         },
       ),
     );
