@@ -23,7 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Center(child: TextButton(onPressed: (){
             //Get.to(ScreenOne(name: 'Atikuzzaman Sabuj',));
-            Get.toNamed('/screenOne');
+            Get.toNamed('/screenOne', arguments: [
+              'Atik Sabuj',
+              'my name is this',
+              'CSE : BSc Graduate'
+            ]);
+
 
             //Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenOne()));
           }, child: Text('Go to Screen One'))),
