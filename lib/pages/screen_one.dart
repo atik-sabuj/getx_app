@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:getx_app/pages/screen_two.dart';
 
 class ScreenOne extends StatefulWidget {
-  const ScreenOne({Key? key}) : super(key: key);
+  final String name;
+  const ScreenOne({Key? key, this.name = ''}) : super(key: key);
 
   @override
   State<ScreenOne> createState() => _ScreenOneState();
@@ -14,7 +15,7 @@ class _ScreenOneState extends State<ScreenOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen One'),
+        title: Text('Screen One' +widget.name),
         centerTitle: true,
       ),
       body: Column(
