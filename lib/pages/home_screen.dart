@@ -22,7 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(child: TextButton(onPressed: (){
-            Get.to(ScreenOne(name: 'Atikuzzaman Sabuj',));
+            //Get.to(ScreenOne(name: 'Atikuzzaman Sabuj',));
+            Get.toNamed('/screenOne');
+
             //Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenOne()));
           }, child: Text('Go to Screen One'))),
         ],
