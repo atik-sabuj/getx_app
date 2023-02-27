@@ -12,13 +12,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height * 1;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Screen'),
         centerTitle: true,
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height * .8,
+        height: Get.height * .3,
+        //height: MediaQuery.of(context).size.height * .3,
         color: Colors.teal,
         child: Center(
           child: Text('Center'),
