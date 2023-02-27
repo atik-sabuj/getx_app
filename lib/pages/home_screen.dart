@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,6 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
 
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Get.snackbar('Sabuj Atik', 'Subscribe My Channel');
+        },
       ),
     );
   }
