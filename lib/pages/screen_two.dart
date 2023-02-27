@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-class ScreenOne extends StatefulWidget {
-  const ScreenOne({Key? key}) : super(key: key);
+class ScreenTwo extends StatefulWidget {
+  const ScreenTwo({Key? key}) : super(key: key);
 
   @override
-  State<ScreenOne> createState() => _ScreenOneState();
+  State<ScreenTwo> createState() => _ScreenTwoState();
 }
 
-class _ScreenOneState extends State<ScreenOne> {
+class _ScreenTwoState extends State<ScreenTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen One'),
+        title: Text('Screen Two'),
         centerTitle: true,
       ),
       body: Column(
