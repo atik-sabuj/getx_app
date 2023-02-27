@@ -12,12 +12,15 @@ class _ScreenOneState extends State<ScreenOne> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Screen One'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(child: TextButton(onPressed: (){}, child: Text('Go to the Next Screen'))),
+          Center(child: TextButton(onPressed: (){
+            Navigator.pop(context);
+          }, child: Text('Go Back'))),
         ],
       ),
     );
