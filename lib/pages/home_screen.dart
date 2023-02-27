@@ -15,10 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Basic GetX'),
       ),
-      body: Card(
-        child: Column(
-          children: [
-            ListTile(
+      body: Column(
+        children: [
+          Card(
+            child: ListTile(
               title: Text('GetX Dialog Alert'),
               subtitle: Text('GetX dialog alert with GetX'),
               onTap: (){
@@ -48,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
 
