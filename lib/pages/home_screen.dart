@@ -20,9 +20,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Get.snackbar('Sabuj Atik', 'Subscribe My Channel');
+      floatingActionButton: FloatingActionButton(onPressed: (){
+          Get.snackbar('Sabuj Atik',
+              'Subscribe My Channel',
+              icon: Icon(Icons.add),
+              onTap: (snap){
+            
+              },
+            mainButton: TextButton(onPressed: (){},
+                child: Text('Click')),
+              backgroundColor: Colors.teal,
+            snackPosition: SnackPosition.BOTTOM,
+          );
         },
       ),
     );
