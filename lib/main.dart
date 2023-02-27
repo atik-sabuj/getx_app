@@ -4,6 +4,7 @@ import 'package:getx_app/app_languages/languages.dart';
 import 'package:getx_app/pages/home_screen.dart';
 import 'pages/screen_one.dart';
 import 'pages/screen_two.dart';
+import 'package:getx_app/home_page.dart';
 
 
 void main() {
@@ -18,23 +19,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-
-      translations: Languages(),
-      locale: Locale('en', 'US'),
-      fallbackLocale: Locale('en', 'US'),
-
-
-
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
-/*      getPages: [
-        GetPage(name: '/', page: () => HomeScreen()),
-        GetPage(name: '/screenOne', page: () => ScreenOne()),
-        GetPage(name: '/screenTwo', page: () => ScreenTwo()),
-      ],*/
+      home: const HomePage(),
+
     );
   }
 }
