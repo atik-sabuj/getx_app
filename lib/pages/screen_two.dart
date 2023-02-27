@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 class ScreenTwo extends StatefulWidget {
   const ScreenTwo({Key? key}) : super(key: key);
 
@@ -20,6 +21,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(child: TextButton(onPressed: (){
+            Get.back();
             Get.back();
             //Navigator.pop(context);
           }, child: Text('Go Back'))),

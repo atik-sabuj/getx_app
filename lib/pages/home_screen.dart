@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Center(child: TextButton(onPressed: (){
             Get.to(ScreenOne());
             //Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenOne()));
-          }, child: Text('Go to the Next Screen'))),
+          }, child: Text('Go to Screen One'))),
         ],
       ),
     );
