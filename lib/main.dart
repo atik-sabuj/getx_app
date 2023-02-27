@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
-      getPages: [
+/*      getPages: [
         GetPage(name: '/', page: () => HomeScreen()),
         GetPage(name: '/screenOne', page: () => ScreenOne()),
         GetPage(name: '/screenTwo', page: () => ScreenTwo()),
-      ],
+      ],*/
     );
   }
 }

@@ -17,22 +17,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Home Screen'),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(child: TextButton(onPressed: (){
-            //Get.to(ScreenOne(name: 'Atikuzzaman Sabuj',));
-            Get.toNamed('/screenOne', arguments: [
-              'Atik Sabuj',
-              'my name is this',
-              'CSE : BSc Graduate'
-            ]);
-
-
-            //Navigator.push(context, MaterialPageRoute(builder: (context) => ScreenOne()));
-          }, child: Text('Go to Screen One'))),
-        ],
+      body: Container(
+        height: MediaQuery.of(context).size.height * .8,
+        color: Colors.teal,
+        child: Center(
+          child: Text('Center'),
+        ),
       ),
     );
   }
