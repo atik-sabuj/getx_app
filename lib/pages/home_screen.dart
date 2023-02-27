@@ -25,6 +25,26 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text('message'.tr),
             subtitle: Text('name'.tr),
           ),
+          SizedBox(height: 50,),
+          Row(
+            children: [
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(Locale('en', 'US'));
+              }, child: Text('English')),
+
+              SizedBox(width: 20,),
+
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(Locale('ur', 'PK'));
+              }, child: Text('Urdu')),
+
+              SizedBox(width: 20,),
+
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(Locale('ban', 'BD'));
+              }, child: Text('Bangla')),
+            ],
+          ),
         ],
       ),
     );

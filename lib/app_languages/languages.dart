@@ -8,7 +8,15 @@ class Languages extends Translations {
     'en_US' : {
       'message' : 'What is your name',
       'name' : 'Atikuzzaman Sabuj'
-    }
+    },
+    'ur_PK' : {
+      'message' : 'آپ کا نام کیا ہے',
+      'name' : 'عتیق الزمان سبز'
+    },
+    'ban_BD' : {
+      'message' : 'আপনার নাম কি',
+      'name' : 'আতিকুজ্জামান সবুজ'
+    },
   };
 
 }
