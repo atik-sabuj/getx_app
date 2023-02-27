@@ -49,12 +49,46 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+          Card(
+            child: ListTile(
+              title: Text('GetX Bottom Sheet'),
+              subtitle: Text('GetX Bottom Sheet with GetX'),
+              onTap: (){
+                Get.bottomSheet(
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            onTap: (){
+                              Get.changeTheme(ThemeData.light());
+                            },
+                            leading: Icon(Icons.light_mode),
+                            title: Text('Light Theme'),
+                          ),
+                          ListTile(
+                            onTap: (){
+                              Get.changeTheme(ThemeData.dark());
+                            },
+                            leading: Icon(Icons.dark_mode),
+                            title: Text('Dark Theme'),
+                          ),
+                        ],
+                      ),
+                    ),
+                );
+              },
+            ),
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
+/*      floatingActionButton: FloatingActionButton(onPressed: (){
 
         },
-      ),
+      ),*/
     );
   }
 }
