@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/example_two/example_two.dart';
+import 'package:getx_app/favorite_controller/favorite_controller.dart';
 import 'package:getx_app/notification/notification_controller.dart';
 import 'counter_controller/counter_controller.dart';
 
@@ -14,8 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  List<String> fruitList = ['Apple', 'Banana', 'Orange', 'Mango', 'Pine-apple'];
-  List<String> tempFruitList = [];
+  FavoriteController favoriteController = Get.put(FavoriteController());
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: fruitList.length,
+        itemCount: favoriteController.fruitList.length,
           itemBuilder: (context, index){
           return Card(
             child: ListTile(
