@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  bool notification = false;
   @override
   void initState() {
     // TODO: implement initState
@@ -30,9 +31,14 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Notifications'),
-              Switch(value: false, onChanged: (value){
+              Switch(value: notification, onChanged: (value){
+                notification = value;
+                setState(() {
+
+                });
 
               }),
             ],
