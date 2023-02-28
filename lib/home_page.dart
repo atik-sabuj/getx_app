@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print('build');
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
@@ -36,6 +37,13 @@ class _HomePageState extends State<HomePage> {
             width: 200,
             color: Colors.teal.withOpacity(opacity),
           ),
+          Slider(value: opacity, onChanged: (value){
+            print(value);
+            opacity = value;
+            setState(() {
+
+            });
+          }),
         ],
       ),
     );
