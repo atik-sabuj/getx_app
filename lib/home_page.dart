@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/example_two/example_two.dart';
+import 'package:getx_app/notification/notification_controller.dart';
 import 'counter_controller/counter_controller.dart';
 
 
@@ -13,7 +14,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  bool notification = false;
+  NotificationController notificationController = Get.put(NotificationController());
+
   @override
   void initState() {
     // TODO: implement initState
@@ -34,12 +36,8 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Notifications'),
-              Switch(value: notification, onChanged: (value){
-                notification = value;
-                setState(() {
-
-                });
-
+              Switch(value: notificationController.notification.value, onChanged: (value){
+                notificationController.setNotification(value);
               }),
             ],
           ),
