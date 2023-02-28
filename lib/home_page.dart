@@ -13,8 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  ExampleTwoController exampleTwoController = Get.put(ExampleTwoController());
-
   @override
   void initState() {
     // TODO: implement initState
@@ -30,18 +28,15 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Obx(() => Container(
-            height: 200,
-            width: 200,
-            color: Colors.teal.withOpacity(exampleTwoController.opacity.value),
-          ),),
-          Obx(() => Slider(value: exampleTwoController.opacity.value, onChanged: (value){
-            exampleTwoController.setOpacity(value);
-          }
-          ),),
+          Row(
+            children: [
+              Text('Notifications'),
+              Switch(value: false, onChanged: (value){
+
+              }),
+            ],
+          ),
         ],
       ),
     );
