@@ -12,12 +12,17 @@ class LoginController extends GetxController {
   void loginApi() async {
     loading.value = true;
     try {
+
+      Map newData = {
+        'email': 'emailController.value.text',
+        'password': 'passwordController.value.text'
+      };
+
       final response =
           await post(Uri.parse('https://reqres.in/api/login'),
-          body: {
-        'email': 'emailController.value.text',
-        'password': 'passwordController.value.text',
-      });
+          body: jsonEncode(newData),
+
+      );
 
       var data = jsonDecode(response.body);
 
