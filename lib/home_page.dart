@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   final CounterController controller = Get.put(CounterController());
-  int counter = 0;
+  //int counter = 0;
 
   @override
   void initState() {
@@ -33,14 +33,16 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Center(
-            child: Text(counter.toString(), style: TextStyle(fontSize: 60),),
+            child: Obx((){
+              print('Rebuild 2');
+              return Text(controller.counter.toString(), style: TextStyle(fontSize: 60),);
+            }),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          counter++;
-          setState(() {});
+          controller.incrementCounter();
         },
       ),
 
