@@ -35,20 +35,28 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
         centerTitle: true,
       ),
-      body: Obx((){
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            TextFormField(
-              controller: controller.emailController.value,
-              decoration: InputDecoration(
-                hintText: 'Email',
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TextFormField(
+                controller: controller.emailController.value,
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                ),
               ),
-            ),
-          ],
-        );
-      }),
+              TextFormField(
+                controller: controller.passwordController.value,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                ),
+              ),
+              SizedBox(height: 50,),
+            ],
+          ),
+      ),
     );
   }
 }
