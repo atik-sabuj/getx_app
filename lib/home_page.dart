@@ -1,7 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'counter_controller/counter_controller.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,19 +13,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  int x = 0;
+  final CounterController controller = Get.put(CounterController());
+  int counter = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    
-    Timer.periodic(Duration(seconds: 1), (timer) {
-      x++;
-      setState(() {
 
-      });
-    });
   }
   @override
   Widget build(BuildContext context) {
@@ -37,25 +33,14 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Center(
-            child: Text(x.toString(), style: TextStyle(fontSize: 60),),
-          ),
-          Expanded(child: ListView.builder(
-            itemCount: 10000,
-              itemBuilder: (context, index){
-                return ListTile(
-                  title: Text(index.toString()),
-                );
-              }
-          )
+            child: Text(counter.toString(), style: TextStyle(fontSize: 60),),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          x++;
-          setState(() {
-
-          });
+          counter++;
+          setState(() {});
         },
       ),
 
@@ -64,7 +49,6 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
         ],
       ),*/
     );;
