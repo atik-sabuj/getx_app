@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:getx_app/example_two/example_two.dart';
 import 'package:getx_app/favorite_controller/favorite_controller.dart';
 import 'package:getx_app/image_picker/image_picker_controller.dart';
+import 'package:getx_app/login_controller/login_controller.dart';
 import 'package:getx_app/notification/notification_controller.dart';
 import 'counter_controller/counter_controller.dart';
 
@@ -18,7 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  ImagePickerController controller = Get.put(ImagePickerController());
+  LoginController controller = Get.put(LoginController());
 
   @override
   void initState() {
@@ -39,17 +40,12 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: CircleAvatar(
-                radius: 40,
-                backgroundImage: controller.imagePath.isNotEmpty ?
-                FileImage(File(controller.imagePath.toString())): null,
+            TextFormField(
+              controller: controller.emailController.value,
+              decoration: InputDecoration(
+                hintText: 'Email',
               ),
             ),
-            TextButton(onPressed: (){
-              controller.getImage();
-            },
-                child: Text('Pick Image')),
           ],
         );
       }),
