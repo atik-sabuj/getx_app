@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  NotificationController notificationController = Get.put(NotificationController());
+
 
   @override
   void initState() {
@@ -30,21 +30,13 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Notifications'),
-              Obx((){
-                return Switch(value: notificationController.notification.value, onChanged: (value){
-                  notificationController.setNotification(value);
-                });
-              }),
-            ],
-          ),
-        ],
-      ),
+      body: ListView.builder(
+        itemCount: 10,
+          itemBuilder: (context, index){
+          return ListTile(
+            title: Text(index.toString()),
+          );
+          }),
     );
   }
 }
