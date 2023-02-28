@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/example_two/example_two.dart';
 import 'package:getx_app/favorite_controller/favorite_controller.dart';
+import 'package:getx_app/image_picker/image_picker_controller.dart';
 import 'package:getx_app/notification/notification_controller.dart';
 import 'counter_controller/counter_controller.dart';
 
@@ -15,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  FavoriteController favoriteController = Get.put(FavoriteController());
+  ImagePickerController controller = Get.put(ImagePickerController());
 
   @override
   void initState() {
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          
+
         ],
       ),
     );
