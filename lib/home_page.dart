@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-
+  List<String> fruitList = ['Apple', 'Banana', 'Orange', 'Mango', 'Pine-apple'];
 
   @override
   void initState() {
@@ -31,10 +31,13 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: fruitList.length,
           itemBuilder: (context, index){
-          return ListTile(
-            title: Text(index.toString()),
+          return Card(
+            child: ListTile(
+              title: Text(fruitList[index].toString()),
+              trailing: Icon(Icons.favorite),
+            ),
           );
           }),
     );
