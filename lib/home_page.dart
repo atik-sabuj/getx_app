@@ -39,18 +39,14 @@ class _HomePageState extends State<HomePage> {
               onTap: (){
 
                 if(favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString())){
-                  favoriteController.tempFruitList.remove(favoriteController.fruitList[index].toString());
+                  favoriteController.removeFormFavorite(favoriteController.fruitList[index].toString());
                 }else {
-                  favoriteController.tempFruitList.add(favoriteController.fruitList[index].toString());
+                  favoriteController.addToFavorite(favoriteController.fruitList[index].toString());
                 }
-
-                setState(() {
-
-                });
               },
               title: Text(favoriteController.fruitList[index].toString()),
-              trailing: Icon(Icons.favorite,
-                color: favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString()) ? Colors.red : Colors.white,),
+              trailing: Obx(() => Icon(Icons.favorite,
+                color: favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString()) ? Colors.red : Colors.white,),),
             ),
           );
           }),
