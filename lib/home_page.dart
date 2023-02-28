@@ -36,10 +36,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Obx((){
         return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(
-              backgroundImage: controller.imagePath.isNotEmpty ?
-              FileImage(File(controller.imagePath.toString())): null,
+            Center(
+              child: CircleAvatar(
+                radius: 40,
+                backgroundImage: controller.imagePath.isNotEmpty ?
+                FileImage(File(controller.imagePath.toString())): null,
+              ),
             ),
             TextButton(onPressed: (){
               controller.getImage();
