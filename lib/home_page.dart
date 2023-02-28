@@ -36,10 +36,11 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Notifications'),
-              Obx(() => Switch(value: notificationController.notification.value, onChanged: (value){
-                notificationController.setNotification(value);
+              Obx((){
+                return Switch(value: notificationController.notification.value, onChanged: (value){
+                  notificationController.setNotification(value);
+                });
               }),
-              ),
             ],
           ),
         ],
