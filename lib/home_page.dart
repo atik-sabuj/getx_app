@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/example_two/example_two.dart';
@@ -32,11 +34,20 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-
-        ],
-      ),
+      body: Obx((){
+        return Column(
+          children: [
+            CircleAvatar(
+              backgroundImage: controller.imagePath.isNotEmpty ?
+              FileImage(File(controller.imagePath.toString())): null,
+            ),
+            TextButton(onPressed: (){
+              controller.getImage();
+            },
+                child: Text('Pick Image')),
+          ],
+        );
+      }),
     );
   }
 }
