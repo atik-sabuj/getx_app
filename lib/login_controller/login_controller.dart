@@ -21,7 +21,7 @@ class LoginController extends GetxController {
       print(data);
 
       if (response.statusCode == 200) {
-        Get.snackbar('Login Successfully', data['error']);
+        Get.snackbar('Login Successfully', data['congratulations']);
 
       } else {
         Get.snackbar('Login Field', data['error']);
