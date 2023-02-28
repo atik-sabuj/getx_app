@@ -38,19 +38,19 @@ class _HomePageState extends State<HomePage> {
             child: ListTile(
               onTap: (){
 
-                if(tempFruitList.contains(fruitList[index].toString())){
-                  tempFruitList.remove(fruitList[index].toString());
+                if(favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString())){
+                  favoriteController.tempFruitList.remove(favoriteController.fruitList[index].toString());
                 }else {
-                  tempFruitList.add(fruitList[index].toString());
+                  favoriteController.tempFruitList.add(favoriteController.fruitList[index].toString());
                 }
 
                 setState(() {
 
                 });
               },
-              title: Text(fruitList[index].toString()),
+              title: Text(favoriteController.fruitList[index].toString()),
               trailing: Icon(Icons.favorite,
-                color: tempFruitList.contains(fruitList[index].toString()) ? Colors.red : Colors.white,),
+                color: favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString()) ? Colors.red : Colors.white,),
             ),
           );
           }),
