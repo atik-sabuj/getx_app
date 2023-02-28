@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   List<String> fruitList = ['Apple', 'Banana', 'Orange', 'Mango', 'Pine-apple'];
+  List<String> tempFruitList = [];
 
   @override
   void initState() {
@@ -35,8 +36,15 @@ class _HomePageState extends State<HomePage> {
           itemBuilder: (context, index){
           return Card(
             child: ListTile(
+              onTap: (){
+                tempFruitList.add(fruitList[index].toString());
+                setState(() {
+
+                });
+              },
               title: Text(fruitList[index].toString()),
-              trailing: Icon(Icons.favorite),
+              trailing: Icon(Icons.favorite,
+                color: tempFruitList.contains(fruitList[index].toString()) ? Colors.red : Colors.white,),
             ),
           );
           }),
