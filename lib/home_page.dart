@@ -54,18 +54,20 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(height: 50,),
-              InkWell(
-                onTap: (){
-                  controller.loginApi();
-                },
-                child: Container(
-                  height: 45,
-                  color: Colors.teal,
-                  child: Center(
+              Obx((){
+                return InkWell(
+                  onTap: (){
+                    controller.loginApi();
+                  },
+                  child: controller.loading.value ? CircularProgressIndicator() : Container(
+                    height: 45,
+                    color: Colors.teal,
+                    child: Center(
                       child: Text('Log In'),
+                    ),
                   ),
-                ),
-              ),
+                );
+              })
             ],
           ),
       ),
