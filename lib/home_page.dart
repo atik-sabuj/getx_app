@@ -31,25 +31,11 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home Page'),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: favoriteController.fruitList.length,
-          itemBuilder: (context, index){
-          return Card(
-            child: ListTile(
-              onTap: (){
-
-                if(favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString())){
-                  favoriteController.removeFormFavorite(favoriteController.fruitList[index].toString());
-                }else {
-                  favoriteController.addToFavorite(favoriteController.fruitList[index].toString());
-                }
-              },
-              title: Text(favoriteController.fruitList[index].toString()),
-              trailing: Obx(() => Icon(Icons.favorite,
-                color: favoriteController.tempFruitList.contains(favoriteController.fruitList[index].toString()) ? Colors.red : Colors.white,),),
-            ),
-          );
-          }),
+      body: Column(
+        children: [
+          
+        ],
+      ),
     );
   }
 }
