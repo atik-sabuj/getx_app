@@ -37,7 +37,13 @@ class _HomePageState extends State<HomePage> {
           return Card(
             child: ListTile(
               onTap: (){
-                tempFruitList.add(fruitList[index].toString());
+
+                if(tempFruitList.contains(fruitList[index].toString())){
+                  tempFruitList.remove(fruitList[index].toString());
+                }else {
+                  tempFruitList.add(fruitList[index].toString());
+                }
+
                 setState(() {
 
                 });
